@@ -26,6 +26,6 @@ class ch3PoolPuzzle_Triangle {
     }
 
     void setArea() {
-        area = (height + length) / 2;
+        area = (height * length) / 2;
     }
 }
