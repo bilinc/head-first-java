@@ -2,31 +2,33 @@ package chapter4;
 
 public class ElectricGuitar {
 
-    String brand;
-    int numOfPickups;
-    boolean rockStarUsesIt;
+    private String brand;
+    private int numOfPickups;
+    private boolean rockStarUsesIt;
 
-    String getBrand() {
+    public String getBrand() {
+        System.out.println("Hello");
         return brand;
     }
 
-    void setBrand(String aBrand) {
+    public void setBrand(String aBrand) {
         brand = aBrand;
     }
 
-    int getNumOfPickups() {
+    public int getNumOfPickups() {
         return numOfPickups;
     }
 
-    void setNumOfPickups(int num) {
+    public void setNumOfPickups(int num) {
         numOfPickups = num;
     }
 
-    boolean getRockStarUsesIt() {
+    public boolean getRockStarUsesIt() {
         return rockStarUsesIt;
     }
 
-    void setRockStarUsesIt(boolean yesOrNo) {
+    public void setRockStarUsesIt(boolean yesOrNo) {
         rockStarUsesIt = yesOrNo;
     }
+
 }
