@@ -7,7 +7,6 @@ public class ElectricGuitar {
     private boolean rockStarUsesIt;
 
     public String getBrand() {
-        System.out.println("Hello");
         return brand;
     }
 
