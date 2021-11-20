@@ -1,58 +1,47 @@
 package chapter5;
 
+import java.util.Scanner;
+
 public class SimpleDotComGame {
-    /*
-    declare: and int array to hold the location cells. Call it locationCells
-    declare: an int to hold the number of hits. Call it numOfHits and SET it to 0
+    public static void main (String [] args) {
+        /*
+        declare: an int variable to hold the humber of user guesses named numOfGuesses, set it to 0.
+        make: a new SimpleDotCom instance
+        compute: a random number between 0 and 4 that will be the starting location cell position
+        make: an int array with 3 ints using the randomly-generated number, that number incremented by 1
+        and that number incremented by 2 ( example 3,4,5)
+        invoke: the setLocationsCells() method on the SimpleDotCom instance
+        declare: a boolean variable representing the state of the game, named isAlive. SET it to true.
 
-    declare: a checkYourself() method that takes a String for the user's guess ("1", "3", etc),
-    checks it, and returns a result representing a hit, miss, or kill
-    declare: a setLocationCells() setter method that takes an int array (which has the three cell locations as ints (2,3,4,etc)
-
-    method: String checkYourself(String userGuess)
-        get the user guess as a String parameter
-        convert the user guess to an int
-        repeat with each of the location cells in the int array
-            // compare the user guess to the location cell
-            if the user guess matches
-                increment the number of hits
-                // find out if it was the last location cell
-                if number of hits is 3, return "kill" as the result
-                else it was not a kill, so return "hit"
-                end if
-            else the user guess did not match, so return "miss"
+        while the dot com is still alive (isAlive == true):
+            get user input from the command line
+            // check the user guess
+            invoke the checkYourself() method on the SimpleDotCom instance
+            increment numOfGuesses variable
+            // check for dot com death
+            if result is "kill"
+                set isAlive to false (which means we won't enter the loop again)
+                print the number of user guesses
             end if
-        end repeat
-    end method
+        end while
+         */
 
-    method: void setLocationCells(int[] cellLocations)
-        get the cell locations as an int array parameter
-        assign the cell locations parameter to the cell locations instance variable
-    end method
-    * */
-    int[] locationCells;
-    int numOfHits = 0;
+        int numbOfGuesses;
+        SimpleDotCom simpleDotCom = new SimpleDotCom();
+        int randomNum = (int) (Math.random() * 5);
+        int[] locations = {randomNum, randomNum + 1, randomNum + 2};
 
-    public void setLocationCells(int[] locs) {
-        locationCells = locs;
-    }
+        simpleDotCom.setLocationCells(locations);
+        boolean isAlive = true;
+        Scanner scanner = new Scanner(System.in);
 
-    public String checkYourself(String stringGuess) {
-        int guess = Integer.parseInt(stringGuess);
-        String result = "miss";
-
-        for (int cell: locationCells) {
-            if (guess == cell) {
-                result = "hit";
-                numOfHits++;
-                break;
-            }
+        while (isAlive) {
+            String userInput = scanner.nextLine();
+            simpleDotCom.checkYourself(userInput);
 
         }
-        if (numOfHits == locationCells.length) {
-            result = "kill";
-        }
-        System.out.println(result);
-        return result;
+
+
+
     }
 }

@@ -3,7 +3,7 @@ package chapter5;
 public class SimpleDotComTestDrive {
     public static void main (String[] args) {
         // instantiate a SimpleDotCom object
-        SimpleDotComGame dot = new SimpleDotComGame();
+        SimpleDotCom dot = new SimpleDotCom();
 
         // make and int array for the location of the dot com (3 consecutive ints out of a possible 7)
         int[] locations = {2,3,4};
