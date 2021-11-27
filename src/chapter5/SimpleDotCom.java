@@ -5,6 +5,8 @@ public class SimpleDotCom {
     int[] locationCells;
     // declare: an int to hold the number of hits. Call it numOfHits and SET it to 0
     int numOfHits = 0;
+    // array storing the hits-cell
+    int[] hitsCell = {-1, -1, -1};
 
     /**
      *     method: void setLocationCells(int[] cellLocations)
@@ -33,9 +35,20 @@ public class SimpleDotCom {
         // else the user guess did not match, so return "miss"
         for (int cell: locationCells) {
             if (guess == cell) {
-                result = "hit";
-                numOfHits++;
-                break;
+                for (int e: hitsCell) {
+                    if (e == guess) {
+                        result = "already a hit";
+                        System.out.println(result);
+                        return result;
+                    } else {
+                        result = "hit";
+                        hitsCell[numOfHits] = guess;
+                        numOfHits++;
+                        break;
+
+                    }
+
+                }
             }
 
         }

@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class SimpleDotComGame {
     public static void main (String [] args) {
-        /*
-
-         */
 
 //        declare: an int variable to hold the humber of user guesses named numOfGuesses, set it to 0.
         int numbOfGuesses = 0;
+
+        GameHelper helper = new GameHelper();
 //        make: a new SimpleDotCom instance
         SimpleDotCom simpleDotCom = new SimpleDotCom();
 //        compute: a random number between 0 and 4 that will be the starting location cell position
@@ -26,10 +25,10 @@ public class SimpleDotComGame {
         // while the dot com is still alive (isAlive == true):
         while (isAlive) {
 //          get user input from the command line
-            String userInput = scanner.nextLine();
+            String guess = helper.getUserInput("enter a number: ");
 //          check the user guess
 //          invoke the checkYourself() method on the SimpleDotCom instance
-            String result = simpleDotCom.checkYourself(userInput);
+            String result = simpleDotCom.checkYourself(guess);
 //          increment numOfGuesses variable
             numbOfGuesses++;
 
