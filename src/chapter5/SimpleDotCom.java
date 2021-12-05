@@ -45,12 +45,9 @@ public class SimpleDotCom {
                         hitsCell[numOfHits] = guess;
                         numOfHits++;
                         break;
-
                     }
-
                 }
             }
-
         }
         if (numOfHits == locationCells.length) {
             result = "kill";
