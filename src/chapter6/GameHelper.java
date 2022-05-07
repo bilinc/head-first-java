@@ -1,9 +1,16 @@
-package chapter5;
+package chapter6;
 
 import java.io.*;
+import java.util.ArrayList;
 
-// Pre-baked code
 public class GameHelper {
+
+    private static final String aplhabet = "abcdefg";
+    private int gridLength = 7;
+    private int gridSize = 49;
+    private int [] grid = new int[gridSize];
+    private int comCount = 0;
+
     public String getUserInput(String prompt) {
         String inputLine = null;
         System.out.println(prompt + "  ");
@@ -17,4 +24,8 @@ public class GameHelper {
         return inputLine;
     }
 
+    public ArrayList<String> placeDotCom(int comSize) {
+
+        return
+    }
 }

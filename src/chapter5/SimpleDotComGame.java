@@ -8,7 +8,7 @@ public class SimpleDotComGame {
 //        declare: an int variable to hold the humber of user guesses named numOfGuesses, set it to 0.
         int numbOfGuesses = 0;
 
-        GameHelper helper = new GameHelper();
+        SimpleGameHelper helper = new SimpleGameHelper();
 //        make: a new SimpleDotCom instance
         SimpleDotCom simpleDotCom = new SimpleDotCom();
 //        compute: a random number between 0 and 4 that will be the starting location cell position
